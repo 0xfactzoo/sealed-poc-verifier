@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sealed PoC Verifier — local demo</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+  .warn { background: #fff3cd; border: 1px solid #d9a400; padding: 1rem; border-radius: 8px; }
+  textarea { width: 100%; min-height: 120px; font-family: monospace; }
+  button { padding: .6rem 1rem; margin: .5rem .5rem 0 0; cursor: pointer; }
+  pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+  .verdict { font-size: 1.4rem; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Sealed PoC Verifier</h1>
+<p>Triase bug bounty privat — demo lokal.</p>
+<div class="warn">
+  <strong>DEMO SIMULASI LOKAL — bukan verifikasi TEE asli.</strong><br>
+  Halaman ini tidak mengirim PoC ke mana pun (tidak ada network request).
+  PoC hanya ada di memori browser kamu, di-hash secara lokal, lalu dihapus
+  dari memori saat kamu klik “Hapus dari memori”. Verdict di sini hanya
+  heuristik demo; verdict Foundry yang sebenarnya dihasilkan oleh
+  <code>src/verifier.py</code> di CLI. Jangan pakai demo ini sebagai bukti
+  untuk program bounty live.
+</div>
+
+<h2>1. Target contract (.sol)</h2>
+<input type="file" id="targetFile" accept=".sol">
+<textarea id="targetText" placeholder="atau paste kode target di sini"></textarea>
+
+<h2>2. PoC (Foundry test, .sol)</h2>
+<input type="file" id="pocFile" accept=".sol">
+<textarea id="pocText" placeholder="atau paste PoC di sini"></textarea>
+<p><em>Isi PoC tidak pernah ditampilkan kembali setelah verifikasi.</em></p>
+
+<button id="verifyBtn">Verifikasi (simulasi lokal)</button>
+<button id="clearBtn">Hapus dari memori</button>
+
+<h2>3. Evidence</h2>
+<pre id="output">Belum ada verdict. Evidence hanya berisi hash — bukan isi PoC.</pre>
+
+<script src="app.js"></script>
+</body>
+</html>
