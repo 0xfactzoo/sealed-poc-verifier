@@ -1,0 +1,21 @@
+{
+  "tool": "sealed-poc-verifier",
+  "version": "0.1.0-local-simulation",
+  "verdict": "REPRODUCED",
+  "poc_sha256": "449a3527a27475cbb54c5d4f68ca960b3af4644935ffaedad0871fc68c28fb7d",
+  "target_sha256": "0497d7f81ebe903fda367d930b4f7c8a0727aad5ce90df6a3f452902dfa2ed5c",
+  "poc_filename": "ReentrancyPoC.t.sol",
+  "target_filename": "VulnerableVault.sol",
+  "poc_bytes": 1570,
+  "target_bytes": 760,
+  "test_name": "testReentrancyReproduces",
+  "forge_exit_code": 0,
+  "log_summary": "Compiler run successful!\nRan 1 test for test/Poc.t.sol:ReentrancyPoC\n[PASS] testReentrancyReproduces() (gas: 139106)\nSuite result: ok. 1 passed; 0 failed; 0 skipped; finished in 21.62ms (406.10\u00b5s CPU time)\nRan 1 test suite in 63.21ms (21.62ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)\nSolc 0.8.35 finished in 1.21s",
+  "duration_ms": 2795,
+  "sealed": {
+    "mode": "local-simulation-only",
+    "tee": "NOT_REAL_TEE",
+    "operator_can_see_poc": true,
+    "note": "Local run: the PoC is visible to this machine's operator while it runs. In the real SuperProtocol design the PoC runs inside a hardware TEE (Intel TDX / AMD SEV-SNP) and the operator sees only hashes + verdict. See README.md."
+  }
+}

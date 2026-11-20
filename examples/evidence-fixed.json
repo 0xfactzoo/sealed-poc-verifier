@@ -1,0 +1,21 @@
+{
+  "tool": "sealed-poc-verifier",
+  "version": "0.1.0-local-simulation",
+  "verdict": "NOT_REPRODUCED",
+  "poc_sha256": "449a3527a27475cbb54c5d4f68ca960b3af4644935ffaedad0871fc68c28fb7d",
+  "target_sha256": "e7a8348994923ad57acb9633197e97182819bc0e651b836b8fe4702d8caf87aa",
+  "poc_filename": "ReentrancyPoC.t.sol",
+  "target_filename": "FixedVault.sol",
+  "poc_bytes": 1570,
+  "target_bytes": 839,
+  "test_name": "testReentrancyReproduces",
+  "forge_exit_code": 1,
+  "log_summary": "Compiler run successful!\nRan 1 test for test/Poc.t.sol:ReentrancyPoC\n[FAIL: vault not drained: 10000000000000000000 != 0] testReentrancyReproduces() (gas: 98841)\nSuite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 994.09\u00b5s (223.32\u00b5s CPU time)\nRan 1 test suite in 46.02ms (994.09\u00b5s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)\nFailing tests:\n[FAIL: vault not drained: 10000000000000000000 != 0] testReentrancyReproduces() (gas: 98841)\nTip: Run `forge test --rerun` to retry only the 1 failed test\nEncountered 1 failing test in test/Poc.t.sol:ReentrancyPoC\nEncountered a total of 1 failing tests, 0 tests succeeded\nTip: Run `forge test --debug --match-test <TEST_NAME>` to inspect one failing test in the debugger",
+  "duration_ms": 2408,
+  "sealed": {
+    "mode": "local-simulation-only",
+    "tee": "NOT_REAL_TEE",
+    "operator_can_see_poc": true,
+    "note": "Local run: the PoC is visible to this machine's operator while it runs. In the real SuperProtocol design the PoC runs inside a hardware TEE (Intel TDX / AMD SEV-SNP) and the operator sees only hashes + verdict. See README.md."
+  }
+}
